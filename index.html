@@ -22,7 +22,6 @@
       }
       #wrapper #editor{
         height: 100%;
-
         flex: 0 1 30em;
         font-size: 14px;
       }
@@ -44,7 +43,6 @@
         max-height: 100%;
         flex: 1 1 auto;
         padding: 100px;
-
       }
     </style>
   </head>
@@ -52,7 +50,7 @@
     <div id="wrapper">
       <div id="editor">
         <div id="toolbar">
-          <button id="reset">リセット</button>
+          <button id="reset">Reset</button>
         </div>
 <style contenteditable="plaintext-only">
 #box1{
@@ -101,7 +99,6 @@
       };
       window.onbeforeunload =  function(e) {
         localStorage.setItem('style1', editor.innerHTML);
-        console.log('saved.');
       };
     </script>
   </body>

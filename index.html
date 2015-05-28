@@ -69,7 +69,7 @@
     <script>
       var editor = document.querySelector('body style[contenteditable]');
       var def = editor.innerHTML;
-      document.querySelector('#reset').onclick = function(e){
+      document.getElementById('reset').onclick = function(e){
         editor.innerHTML = def;
       };
       var savedData = localStorage.getItem('style1');

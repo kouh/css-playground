@@ -4,47 +4,7 @@
     <meta charset="UTF-8">
     <title>FlexboxPlayground</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <style>
-      html,body{
-        height: 100%;
-      }
-      *{
-        transition: 1s;
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      #wrapper{
-        height: 100%;
-        display: flex;
-        align-items: flex-start;
-        padding: 0.5em;
-      }
-      #wrapper #editor{
-        height: 100%;
-        flex: 0 1 30em;
-        font-size: 14px;
-      }
-      #toolbar{
-        margin-bottom: 1em;
-      }
-      #wrapper style{
-        overflow-y: scroll;
-        display: block;
-        white-space: pre;
-        border: 1px solid gray;
-        font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
-      }
-
-      #wrapper style:active{
-        border-color: transparent;
-      }
-      #view{
-        max-height: 100%;
-        flex: 1 1 auto;
-        padding: 100px;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div id="wrapper">
@@ -97,42 +57,6 @@
         </div>
       </div>
     </div>
-    <script>
-      var editor = document.querySelector('body style[contenteditable]');
-      var def = editor.innerHTML;
-      document.getElementById('reset').onclick = function(e){
-        editor.innerHTML = def;
-      };
-      var savedData = localStorage.getItem('style_flexbox');
-      if(savedData.trim()){
-        editor.innerHTML = savedData;
-      }
-      editor.focus();
-      editor.onkeydown = function(e){
-        // console.log(e.keyCode);
-        if(e.keyCode === 9){
-          //Tabキーで半角スペース2個
-          e.preventDefault();
-          var sel = window.getSelection();
-          var range = sel.getRangeAt(0);
-          // sel.removeAllRanges();
-          range.deleteContents();
-          var text = document.createTextNode("  ");
-          range.insertNode(text);
-          // range.insertnode(node);
-          range.selectNode(text);
-          // range.setStartAfter(text);
-          // range.setEndAfter(text);
-          range.collapse();
-          sel.removeAllRanges();
-          sel.addRange(range);
-        }
-        var style = window.getComputedStyle(document.getElementById('child1'));
-        console.log('flex: ' + style.flexGrow + ' ' + style.flexShrink + ' ' + style.flexBasis);
-      };
-      window.onbeforeunload =  function(e) {
-        localStorage.setItem('style_flexbox', editor.innerHTML);
-      };
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>

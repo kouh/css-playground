@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>PositionPlayground</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="editor">
+        <div id="toolbar">
+          <button id="reset">Reset</button>
+        </div>
+<style contenteditable="plaintext-only">
+#gparent {
+  width: 750px;
+  height: 500px;
+}
+#parent{
+  border: 1px solid #ff00ff;
+  position: relative;
+  width: 500px;
+  height: 300px;
+}
+
+.child{
+  position: absolute;
+}
+
+#child1{
+  background: #ff0000;
+}
+
+#child2{
+  background: #00ff00;
+}
+
+#child3{
+  background: #0000ff;
+}
+
+#child4{
+  background: #ffff00;
+}
+
+#child5{
+  background: #00ffff;
+}
+</style>
+      </div>
+      <div id="view">
+        <div id="gparent">
+          <div id="parent">
+            <div id="child1" class="child">child1</div>
+            <div id="child2" class="child">child2</div>
+            <div id="child3" class="child">child3</div>
+            <div id="child4" class="child">child4</div>
+            <div id="child5" class="child">child5</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
